@@ -38,7 +38,7 @@ body {
 }
 
 .home {
-    background-image: url(../img/header.png);
+    background-image: url(app/img/header.png);
     background-size: cover;
     width: 100%;
     min-height: 90vh;
@@ -294,7 +294,7 @@ a:hover {
     background: linear-gradient(90deg, rgba(2,2,36,0.7),
                                         rgba(9,9,221,0.7),
                                         rgba(0,212,255,0.7)),
-                                        url('../img/web development.png' );
+                                        url('app/img/web development.png' );
     opacity: 0.8;
     color: #fff;
 }
@@ -326,14 +326,14 @@ a:hover {
     background: linear-gradient(90deg, rgba(2,2,36,0.7),
                                         rgba(9,9,221,0.7),
                                         rgba(0,212,255,0.7)),
-                                        url('../img/system engineer.png');
+                                        url('app/img/system engineer.png');
 }
 
 .card1:nth-child(3):hover{
     background: linear-gradient(90deg, rgba(2,2,36,0.7),
                                         rgba(9,9,221,0.7),
                                         rgba(0,212,255,0.7)),
-                                        url('../img/remote-server.png');
+                                        url('app/img/remote-server.png');
 }
 
 
