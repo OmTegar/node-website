@@ -2,8 +2,6 @@ var http = require("http");
 var fs = require("fs");
 var path = require("path");
 var port = 8080;
-const NodeCache = require("node-cache");
-const myCache = new NodeCache({ stdTTL: 60, checkperiod: 120 });
 
 http
   .createServer(function (request, response) {
@@ -34,21 +32,6 @@ http
     };
 
     var contentType = mimeTypes[extname] || "application/octet-stream";
-
-    app.get("/", function (req, res) {
-      const key = req.originalUrl || req.url;
-      const cachedData = myCache.get(key);
-      if (cachedData) {
-        console.log("Data retrieved from cache");
-        res.send(cachedData);
-      } else {
-        console.log("Data retrieved from API");
-        getDataFromAPI(function (data) {
-          myCache.set(key, data);
-          res.send(data);
-        });
-      }
-    });
 
     fs.readFile(filePath, function (error, content) {
       if (error) {
